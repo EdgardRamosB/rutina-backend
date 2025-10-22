@@ -16,8 +16,9 @@ app.use(express.json());
 
 // Mercado Pago config
 const client = new MercadoPagoConfig({
-  accessToken: "TU_ACCESS_TOKEN_TEST",
+  accessToken: process.env.ACCESS_TOKEN,
 });
+
 
 // Ruta para crear preferencia
 app.post("/create_preference", async (req, res) => {
@@ -35,3 +36,4 @@ app.post("/create_preference", async (req, res) => {
 // Puerto
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor en puerto ${PORT}`));
+
