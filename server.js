@@ -15,7 +15,8 @@ app.use(express.json());
 
 // Configurar Mercado Pago usando variable de entorno
 const client = new MercadoPagoConfig({
-  accessToken: process.env.ACCESS_TOKEN,
+  accessToken: process.env.MP_ACCESS_TOKEN,
+
 });
 
 // Ruta para crear preferencia
@@ -34,3 +35,4 @@ app.post("/create_preference", async (req, res) => {
 // Puerto dinámico
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`✅ Servidor corriendo en puerto ${PORT}`));
+
