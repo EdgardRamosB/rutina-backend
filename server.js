@@ -6,7 +6,7 @@ const app = express();
 
 // 💡 Permitir solicitudes desde tu frontend en Vercel
 app.use(cors({
-  origin: "https://rutina-app-pied.vercel.app", // dominio frontend
+  origin: "https://edgardramos.vercel.app/", // dominio frontend
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 }));
@@ -36,5 +36,6 @@ app.post("/create_preference", async (req, res) => {
 // Puerto dinámico
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`✅ Servidor corriendo en puerto ${PORT}`));
+
 
 
